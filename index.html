@@ -156,61 +156,6 @@
 </section>
 <!-- System diagram -->
 
-<section class="section">
-  <div class="container is-max-desktop">
-    <div class="columns is-centered">
-      <div class="column is-four-fifths">
-
-
-        <div class="content has-text-justified">
-
-          <p>
-            UIL-AQA is designed to provide <strong>interpretable</strong> and <strong>uncertainty-aware</strong> scoring for long-term Action Quality Assessment (AQA). Unlike prior methods that produce a single global score, UIL-AQA predicts <em>per-clip difficulty and quality</em>, while also modelling the uncertainty in human judgement. The framework consists of four key components:
-          </p>
-
-          <h3 class="title is-5">1. Feature Extraction</h3>
-          <p>
-            The input video is divided into fixed-length clips. Each clip is processed using a pretrained backbone (I3D or Video Swin Transformer) to extract spatiotemporal features. These features are frozen during training to ensure stability and efficiency.
-          </p>
-
-          <h3 class="title is-5">2. Temporal Decoder with Learnable Queries</h3>
-          <p>
-            UIL-AQA uses a <strong>DETR-style Transformer decoder</strong> equipped with learnable queries. Each query corresponds to a video clip and interacts with clip features through self-attention and cross-attention layers to capture long-range temporal structure. To prevent loss of temporal information, we introduce two innovations:
-          </p>
-          <ul>
-            <li><strong>Attention Loss</strong> – Encourages alignment between self-attention and cross-attention maps, mitigating a failure mode we call <em>Temporal Skipping</em>.</li>
-            <li><strong>Query Initialization</strong> – High-variance Gaussian initialisation promotes diverse temporal representations, strengthening inter-query relationships.</li>
-          </ul>
-
-          <h3 class="title is-5">3. Difficulty–Quality Regression Head</h3>
-          <p>
-            Instead of predicting only a single score, UIL-AQA regresses:
-          </p>
-          <ul>
-            <li><strong>Difficulty</strong> – A softmax-normalised weight representing the relative contribution of each clip.</li>
-            <li><strong>Quality</strong> – A clip-level quality score predicted independently for each segment.</li>
-          </ul>
-          <p>
-            The final video score is obtained via a weighted sum of clip quality scores. This mirrors human judging processes in sports such as rhythmic gymnastics and figure skating, enabling <strong>fine-grained interpretability</strong>.
-          </p>
-
-          <h3 class="title is-5">4. Gaussian Noise Injection for Uncertainty Modelling</h3>
-          <p>
-            Human scoring often includes subjective variation. UIL-AQA introduces a <strong>Gaussian Noise Injection module</strong> during training to simulate this variability by perturbing predicted scores. This encourages the model to learn uncertainty-aware representations, improving robustness against noisy labels and inconsistent judge behaviour.
-          </p>
-
-          <h3 class="title is-5">Summary</h3>
-          <p>
-            Together, these components allow UIL-AQA to achieve <strong>state-of-the-art performance</strong> on three challenging long-form AQA benchmarks (RG, Fis-V, LOGO), while providing the rare ability to both <strong>explain its scoring</strong> and <strong>model uncertainty</strong> — two critical requirements for real-world deployment.
-          </p>
-
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-
 
 
 <!--BibTex citation -->
