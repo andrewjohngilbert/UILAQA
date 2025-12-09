@@ -26,7 +26,7 @@
 
 
 
-  <title>DEAR: Depth-Estimated Action Recognition</title>
+  <title>UIL-AQA: Uncertainty-aware Clip-level Interpretable Action Quality Assessment</title>
   <link rel="icon" type="image/x-icon" href="static/images/favicon-32x32.png">
   <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
   rel="stylesheet">
@@ -58,8 +58,8 @@
   UIL-AQA: Uncertainty-aware Clip-level Interpretable Action Quality Assessment
 </h1>
             <div class="is-size-5 publication-authors">
-  <span class="author-block"><a href="#" target="_blank">Xu Dong</a>[1],</span>
-  <span class="author-block"><a href="#" target="_blank">Xinran Liu</a>[1],</span>
+  <span class="author-block"><a href="https://www.linkedin.com/in/xudong-442302166/" target="_blank">Xu Dong</a>[1],</span>
+  <span class="author-block"><a href="https://www.surrey.ac.uk/people/xinran-liu" target="_blank">Xinran Liu</a>[1],</span>
   <span class="author-block"><a href="https://scholars.uow.edu.au/wanqing-li" target="_blank">Wanqing Li</a>[2],</span>
   <span class="author-block"><a href="https://www.surrey.ac.uk/people/anthony-adeyemi-ejeye" target="_blank">Anthony Adeyemi-Ejeye</a>[1],</span>
   <span class="author-block"><a href="https://andrewjohngilbert.github.io/" target="_blank">Andrew Gilbert</a>[1]</span>
@@ -85,6 +85,7 @@
 
  
                   <!-- Github link -->
+                   <!--
                 <span class="link-block">
                     <a href="https://github.com/SadeghRahmaniB/DEAR" target="_blank"
                     class="external-link button is-normal is-rounded is-dark">
@@ -94,6 +95,8 @@
                     <span>Code</span>
                   </a>
                 </span>
+
+              -->
               
 
                 
@@ -106,18 +109,18 @@
 </section>
 
 
-<!-- Teaser video-->
+<!-- Teaser hero-->
 <section class="hero teaser">
   <div class="container is-max-desktop">
     <div class="hero-body">
-      <img src="assets/dear_teaser.jpg">
+      <img src="assets/UIL-AQA_Teaser.jpg" alt="UIL-AQA teaser figure">
       <h2 class="subtitle has-text-centered">
-        We perform supervised action recognition using a fusion of RGB and depth map frames. We used S4V network for processing RGB and the same network plus VideoMamba to extract depth features. Gated cross-attention (GCA) has been used for fusing modalities, while mean operation has been selected for fusing models' scores.
+        UIL-AQA is a long-term Action Quality Assessment framework that regresses clip-level difficulty and quality while explicitly modelling judge uncertainty. A query-based Transformer decoder, an attention loss to prevent temporal skipping, and a Gaussian noise injection module together yield interpretable clip-wise scores and robust predictions across rhythmic gymnastics, figure skating, and group performance datasets.
       </h2>
     </div>
   </div>
 </section>
-<!-- End teaser video -->
+<!-- End teaser hero -->
 
 <!-- Paper abstract -->
 <section class="section hero is-light">
@@ -127,7 +130,7 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            Detecting actions in videos, particularly within cluttered scenes, poses significant challenges due to the limitations of 2D frame analysis from a camera perspective. Unlike human vision, which benefits from 3D understanding, recognizing actions in such environments can be difficult. This research introduces a novel approach integrating 3D features and depth maps alongside RGB features to enhance action recognition accuracy. Our method involves processing estimated depth maps through a separate branch from the RGB feature encoder and fusing the features to understand the scene and actions comprehensively. Using the Side4Video framework and VideoMamba, which employ CLIP and VisionMamba for spatial feature extraction, our approach outperformed our implementation of the Side4Video network on the Something-Something V2 dataset.
+            Action Quality Assessment (AQA) aims to score how well an action is performed in a video, but long-term sequences, subjective judging and a single global score make this problem challenging. Existing methods often focus on short clips, lack clip-level interpretability, and ignore uncertainty arising from human bias. In this work we propose UIL-AQA, a query-based Transformer framework designed to be both clip-level interpretable and uncertainty-aware for long-term AQA. The model introduces an Attention Loss and a Query Initialization module to mitigate a phenomenon we term <em>Temporal Skipping</em>, where self-attention layers are effectively bypassed, weakening temporal modelling. We further add a Gaussian Noise Injection module that simulates variability in human scoring, improving robustness to subjective and noisy labels. Finally, a Difficulty–Quality Regression Head decomposes each clip’s contribution into separate difficulty and quality components, enabling fine-grained, human-aligned analysis of performances. Experiments on three long-term AQA benchmarks – Rhythmic Gymnastics (RG), Figure Skating Video (Fis-V), and LOng-form GrOup (LOGO) – show that UIL-AQA achieves state-of-the-art performance while providing more interpretable clip-wise scores.
           </p>
         </div>
       </div>
@@ -138,32 +141,144 @@
 
 
 
-<!-- Paper poster -->
+<!-- System diagram-->
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <img src="assets/UIL-AQA_System.jpg" alt="UIL-AQA System figure">
+      <h2 class="title is-3">Overview of the UIL-AQA architecture</h2>
+      <h2 class="subtitle has-text-centered">
+        The input video is divided into clips and passed through a frozen feature extractor (I3D or Video Swin Transformer). A DETR-style Transformer decoder with learnable queries models long-range temporal structure. Attention Loss and Query Initialization mitigate <strong>Temporal Skipping</strong> by encouraging strong inter-query correlations. The Difficulty–Quality Regression Head outputs clip-level difficulty weights and quality scores, while the Gaussian Noise Injection module models uncertainty in human judgement and improves robustness.
+            </em>
+      </h2>
+    </div>
+  </div>
+</section>
+<!-- System diagram -->
 
-  <section class="hero is-small is-light">
-  <div class="hero-body">
-    <div class="container">
-      <h2 class="title">Poster</h2>
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Method Overview</h2>
 
-      <iframe  src="assets/DEAR HCV Poster.pdf" width="100%" height="1000">
-          </iframe>
-        
+        <div class="content has-text-justified">
+
+          <p>
+            UIL-AQA is designed to provide <strong>interpretable</strong> and <strong>uncertainty-aware</strong> scoring for long-term Action Quality Assessment (AQA). Unlike prior methods that produce a single global score, UIL-AQA predicts <em>per-clip difficulty and quality</em>, while also modelling the uncertainty in human judgement. The framework consists of four key components:
+          </p>
+
+          <h3 class="title is-5">1. Feature Extraction</h3>
+          <p>
+            The input video is divided into fixed-length clips. Each clip is processed using a pretrained backbone (I3D or Video Swin Transformer) to extract spatiotemporal features. These features are frozen during training to ensure stability and efficiency.
+          </p>
+
+          <h3 class="title is-5">2. Temporal Decoder with Learnable Queries</h3>
+          <p>
+            UIL-AQA uses a <strong>DETR-style Transformer decoder</strong> equipped with learnable queries. Each query corresponds to a video clip and interacts with clip features through self-attention and cross-attention layers to capture long-range temporal structure. To prevent loss of temporal information, we introduce two innovations:
+          </p>
+          <ul>
+            <li><strong>Attention Loss</strong> – Encourages alignment between self-attention and cross-attention maps, mitigating a failure mode we call <em>Temporal Skipping</em>.</li>
+            <li><strong>Query Initialization</strong> – High-variance Gaussian initialisation promotes diverse temporal representations, strengthening inter-query relationships.</li>
+          </ul>
+
+          <h3 class="title is-5">3. Difficulty–Quality Regression Head</h3>
+          <p>
+            Instead of predicting only a single score, UIL-AQA regresses:
+          </p>
+          <ul>
+            <li><strong>Difficulty</strong> – A softmax-normalised weight representing the relative contribution of each clip.</li>
+            <li><strong>Quality</strong> – A clip-level quality score predicted independently for each segment.</li>
+          </ul>
+          <p>
+            The final video score is obtained via a weighted sum of clip quality scores. This mirrors human judging processes in sports such as rhythmic gymnastics and figure skating, enabling <strong>fine-grained interpretability</strong>.
+          </p>
+
+          <h3 class="title is-5">4. Gaussian Noise Injection for Uncertainty Modelling</h3>
+          <p>
+            Human scoring often includes subjective variation. UIL-AQA introduces a <strong>Gaussian Noise Injection module</strong> during training to simulate this variability by perturbing predicted scores. This encourages the model to learn uncertainty-aware representations, improving robustness against noisy labels and inconsistent judge behaviour.
+          </p>
+
+          <h3 class="title is-5">Summary</h3>
+          <p>
+            Together, these components allow UIL-AQA to achieve <strong>state-of-the-art performance</strong> on three challenging long-form AQA benchmarks (RG, Fis-V, LOGO), while providing the rare ability to both <strong>explain its scoring</strong> and <strong>model uncertainty</strong> — two critical requirements for real-world deployment.
+          </p>
+
+        </div>
       </div>
     </div>
-  </section>
-<!--End paper poster -->
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-four-fifths">
+
+        <h2 class="title is-3">Results</h2>
+
+        <div class="content has-text-justified">
+
+          <p>
+            UIL-AQA achieves state-of-the-art performance across three challenging long-term Action Quality Assessment benchmarks:
+            Rhythmic Gymnastics (RG), Figure Skating Video (Fis-V), and LOng-form GrOup (LOGO). The model consistently improves
+            ranking correlation (SRCC) while maintaining competitive or superior mean squared error performance.
+          </p>
+
+          <h3 class="title is-5">Rhythmic Gymnastics (RG)</h3>
+          <ul>
+            <li>Achieves the <strong>highest average SRCC</strong> across the four apparatuses.</li>
+            <li>Improves upon Inter-AQA and CoFInAl by capturing fine-grained clip-level structure.</li>
+            <li>Reduces MSE for most subcategories, showing improved absolute scoring accuracy.</li>
+          </ul>
+
+          <h3 class="title is-5">Figure Skating Video (Fis-V)</h3>
+          <ul>
+            <li>Improves both TES and PCS SRCC compared with prior state-of-the-art methods.</li>
+            <li>Outperforms Inter-AQA by introducing uncertainty-aware scoring and better long-term modelling.</li>
+            <li>Maintains stable MSE values, demonstrating that SRCC gains are not at the expense of error inflation.</li>
+          </ul>
+
+          <h3 class="title is-5">LOng-form GrOup (LOGO)</h3>
+          <ul>
+            <li>Large performance gain (<strong>+26.5% SRCC</strong> improvement vs prior methods using I3D features).</li>
+            <li>With VST features, UIL-AQA achieves the <strong>highest correlation</strong> across all methods.</li>
+            <li>Robust under multi-person, multi-view sequences—the most complex setting in long-term AQA.</li>
+          </ul>
+
+          <h3 class="title is-5">Why UIL-AQA Performs Better</h3>
+          <ul>
+            <li><strong>Attention Loss</strong> prevents temporal skipping and stabilises long-range temporal alignment.</li>
+            <li><strong>Difficulty–Quality Regression</strong> provides richer supervision than single-score regression.</li>
+            <li><strong>Gaussian Noise Injection</strong> improves robustness to judge bias and noisy labels.</li>
+            <li><strong>Query Initialization</strong> encourages diverse temporal representations.</li>
+          </ul>
+
+          <p>
+            Together, these improvements allow UIL-AQA to more accurately capture the temporal dynamics and subjective scoring
+            characteristics of complex, long-duration performances.
+          </p>
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
 
 
 <!--BibTex citation -->
   <section class="section" id="BibTeX">
     <div class="container is-max-desktop content">
       <h2 class="title">BibTeX</h2>
-      <pre><code>@inproceedings{Rahmani:Dear:ECCVWS:2024,
-        AUTHOR = Rahmani, Sadegh and Rybansky, Filip and Vuong, Quoc and Guerin, Frank and Gilbert, Andrew ",
-        TITLE = "DEAR: Depth-Estimated Action Recognition",
-        BOOKTITLE = " The European Conference of Computer Vision 2024, Human-inspired Computer Vision Workshop",
-        YEAR = "2024",
-        }</code></pre>
+      <pre><code>@article{Dong2025UILAQA,
+  author    = {Xu Dong and Xinran Liu and Wanqing Li and Anthony Adeyemi{-}Ejeye and Andrew Gilbert},
+  title     = {UIL-AQA: Uncertainty-aware Clip-level Interpretable Action Quality Assessment},
+  journal   = {International Journal of Computer Vision},
+  year      = {2025},
+}
+</code></pre>
     </div>
 </section>
 <!--End BibTex citation -->
