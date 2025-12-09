@@ -109,52 +109,7 @@
 </section>
 
 
-<!-- Teaser hero-->
-<section class="hero teaser">
-  <div class="container is-max-desktop">
-    <div class="hero-body">
-      <img src="assets/UIL-AQA_Teaser.jpg" alt="UIL-AQA teaser figure">
-      <h2 class="subtitle has-text-centered">
-        UIL-AQA is a long-term Action Quality Assessment framework that regresses clip-level difficulty and quality while explicitly modelling judge uncertainty. A query-based Transformer decoder, an attention loss to prevent temporal skipping, and a Gaussian noise injection module together yield interpretable clip-wise scores and robust predictions across rhythmic gymnastics, figure skating, and group performance datasets.
-      </h2>
-    </div>
-  </div>
-</section>
-<!-- End teaser hero -->
 
-<!-- Paper abstract -->
-<section class="section hero is-light">
-  <div class="container is-max-desktop">
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Abstract</h2>
-        <div class="content has-text-justified">
-          <p>
-            Action Quality Assessment (AQA) aims to score how well an action is performed in a video, but long-term sequences, subjective judging and a single global score make this problem challenging. Existing methods often focus on short clips, lack clip-level interpretability, and ignore uncertainty arising from human bias. In this work we propose UIL-AQA, a query-based Transformer framework designed to be both clip-level interpretable and uncertainty-aware for long-term AQA. The model introduces an Attention Loss and a Query Initialization module to mitigate a phenomenon we term <em>Temporal Skipping</em>, where self-attention layers are effectively bypassed, weakening temporal modelling. We further add a Gaussian Noise Injection module that simulates variability in human scoring, improving robustness to subjective and noisy labels. Finally, a Difficulty–Quality Regression Head decomposes each clip’s contribution into separate difficulty and quality components, enabling fine-grained, human-aligned analysis of performances. Experiments on three long-term AQA benchmarks – Rhythmic Gymnastics (RG), Figure Skating Video (Fis-V), and LOng-form GrOup (LOGO) – show that UIL-AQA achieves state-of-the-art performance while providing more interpretable clip-wise scores.
-          </p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-<!-- End paper abstract -->
-
-
-
-<!-- System diagram-->
-<section class="hero teaser">
-  <div class="container is-max-desktop">
-    <div class="hero-body">
-      <h2 class="title is-3">Overview of the UIL-AQA architectureAG</h2>
-      <img src="assets/UIL-AQA_System.jpg" alt="UIL-AQA System figure">
-            <h2 class="subtitle has-text-centered">
-        The input video is divided into clips and passed through a frozen feature extractor (I3D or Video Swin Transformer). A DETR-style Transformer decoder with learnable queries models long-range temporal structure. Attention Loss and Query Initialization mitigate <strong>Temporal Skipping</strong> by encouraging strong inter-query correlations. The Difficulty–Quality Regression Head outputs clip-level difficulty weights and quality scores, while the Gaussian Noise Injection module models uncertainty in human judgement and improves robustness.
-            </em>
-      </h2>
-    </div>
-  </div>
-</section>
-<!-- System diagram -->
 
 
 
