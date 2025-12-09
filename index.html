@@ -67,18 +67,16 @@
               <em>International Journal of Computer Vision (IJCV), 2025</em></span>
             </div>
 
-            <div class="column has-text-centered">
-              <div class="publication-links">
-                <!-- Paper PDF link -->
-                <span class="link-block">
-                  <a href="assets/IJCV_editor_verison.pdf" target="_blank" class="external-link button is-normal is-rounded is-dark">
-                    <span class="icon">
-                      <i class="fas fa-file-pdf"></i>
-                    </span>
-                    <span>Paper</span>
-                  </a>
-                </span>
-              </div>
+            <div class="publication-links">
+              <!-- Paper PDF link -->
+              <span class="link-block">
+                <a href="assets/IJCV_editor_verison.pdf" target="_blank" class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                    <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
             </div>
           </div>
         </div>
@@ -103,111 +101,101 @@
   </section>
   <!-- End paper abstract -->
 
-
-
-
-
-<!-- System diagram-->
-<section class="hero teaser">
-  <div class="container is-max-desktop">
-    <div class="hero-body">
-      <h2 class="title is-3">Overview of the UIL-AQA architecture</h2>
-      <img src="assets/UIL-AQA_System.jpg" alt="UIL-AQA System figure">
-            <h2 class="subtitle has-text-centered">
-        The input video is divided into clips and passed through a frozen feature extractor (I3D or Video Swin Transformer). A DETR-style Transformer decoder with learnable queries models long-range temporal structure. Attention Loss and Query Initialization mitigate <strong>Temporal Skipping</strong> by encouraging strong inter-query correlations. The Difficulty–Quality Regression Head outputs clip-level difficulty weights and quality scores, while the Gaussian Noise Injection module models uncertainty in human judgement and improves robustness.
-            </em>
-      </h2>
+  <!-- System diagram -->
+  <section class="hero teaser">
+    <div class="container is-max-desktop">
+      <div class="hero-body">
+        <h2 class="title is-3">Overview of the UIL-AQA architecture</h2>
+        <img src="assets/UIL-AQA_System.jpg" alt="UIL-AQA System figure">
+        <h2 class="subtitle has-text-centered">
+          The input video is divided into clips and passed through a frozen feature extractor (I3D or Video Swin Transformer). A DETR-style Transformer decoder with learnable queries models long-range temporal structure. Attention Loss and Query Initialization mitigate <strong>Temporal Skipping</strong> by encouraging strong inter-query correlations. The Difficulty–Quality Regression Head outputs clip-level difficulty weights and quality scores, while the Gaussian Noise Injection module models uncertainty in human judgement and improves robustness.
+        </h2>
+      </div>
     </div>
-  </div>
-</section>
-<!-- System diagram -->
+  </section>
+  <!-- End system diagram -->
 
-<section class="section">
-  <div class="container is-max-desktop">
-    <h2 class="title is-3">Results</h2>
+  <section class="section">
+    <div class="container is-max-desktop">
+      <h2 class="title is-3">Results</h2>
 
-    <div class="content has-text-justified">
-      <p>
-        UIL-AQA achieves state-of-the-art performance across all three major long-term AQA datasets.
-        Improvements are most pronounced on the Rhythmic Gymnastics (RG) and LOGO benchmarks,
-        demonstrating the model’s strength in handling long temporal dependencies, uncertainty,
-        and clip-level interpretability.
-      </p>
+      <div class="content has-text-justified">
+        <p>
+          UIL-AQA achieves state-of-the-art performance across all three major long-term AQA datasets.
+          Improvements are most pronounced on the Rhythmic Gymnastics (RG) and LOGO benchmarks,
+          demonstrating the model's strength in handling long temporal dependencies, uncertainty,
+          and clip-level interpretability.
+        </p>
+      </div>
+
+      <h3 class="title is-4">Performance Overview</h3>
+
+      <table class="table is-striped is-hoverable is-fullwidth">
+        <thead>
+          <tr>
+            <th>Dataset</th>
+            <th>Metric</th>
+            <th>Previous SOTA</th>
+            <th>UIL-AQA (Ours)</th>
+            <th>Improvement</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- RG -->
+          <tr>
+            <td rowspan="2"><strong>Rhythmic Gymnastics (RG)</strong></td>
+            <td>Avg. SRCC ↑</td>
+            <td>0.842 (Inter-AQA)</td>
+            <td><strong>0.858</strong></td>
+            <td>+1.6%</td>
+          </tr>
+          <tr>
+            <td>Avg. MSE ↓</td>
+            <td>7.61 (Inter-AQA)</td>
+            <td><strong>5.65</strong></td>
+            <td>−25.7%</td>
+          </tr>
+
+          <!-- Fis-V -->
+          <tr>
+            <td rowspan="2"><strong>Figure Skating (Fis-V)</strong></td>
+            <td>Avg. SRCC ↑</td>
+            <td>0.780 (Inter-AQA)</td>
+            <td><strong>0.796</strong></td>
+            <td>+1.6%</td>
+          </tr>
+          <tr>
+            <td>Avg. MSE ↓</td>
+            <td>1.745 (Inter-AQA)</td>
+            <td><strong>1.72</strong></td>
+            <td>Comparable</td>
+          </tr>
+
+          <!-- LOGO -->
+          <tr>
+            <td rowspan="2"><strong>LOGO (Artistic Swimming)</strong></td>
+            <td>Avg. SRCC ↑</td>
+            <td>0.780 (Inter-AQA)</td>
+            <td><strong>0.796</strong></td>
+            <td>+2.1%</td>
+          </tr>
+          <tr>
+            <td>Avg. R-ℓ2 ↓</td>
+            <td>1.745 (Inter-AQA)</td>
+            <td><strong>3.084</strong></td>
+            <td>Better ranking despite small abs. error rise</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="content is-small has-text-grey">
+        <p>
+          Data extracted from the IJCV 2025 manuscript, including Tables 2, 3, and 4
+          (RG, Fis-V, LOGO results).  
+        </p>
+      </div>
     </div>
-
-    <h3 class="title is-4">Performance Overview</h3>
-
-    <table class="table is-striped is-hoverable is-fullwidth">
-      <thead>
-        <tr>
-          <th>Dataset</th>
-          <th>Metric</th>
-          <th>Previous SOTA</th>
-          <th>UIL-AQA (Ours)</th>
-          <th>Improvement</th>
-        </tr>
-      </thead>
-      <tbody>
-
-        <!-- RG -->
-        <tr>
-          <td rowspan="2"><strong>Rhythmic Gymnastics (RG)</strong></td>
-          <td>Avg. SRCC ↑</td>
-          <td>0.842 (Inter-AQA)</td>
-          <td><strong>0.858</strong></td>
-          <td>+1.6%</td>
-        </tr>
-        <tr>
-          <td>Avg. MSE ↓</td>
-          <td>7.61 (Inter-AQA)</td>
-          <td><strong>5.65</strong></td>
-          <td>−25.7%</td>
-        </tr>
-
-        <!-- Fis-V -->
-        <tr>
-          <td rowspan="2"><strong>Figure Skating (Fis-V)</strong></td>
-          <td>Avg. SRCC ↑</td>
-          <td>0.780 (Inter-AQA)</td>
-          <td><strong>0.796</strong></td>
-          <td>+1.6%</td>
-        </tr>
-        <tr>
-          <td>Avg. MSE ↓</td>
-          <td>1.745 (Inter-AQA)</td>
-          <td><strong>1.72</strong></td>
-          <td>Comparable</td>
-        </tr>
-
-        <!-- LOGO -->
-        <tr>
-          <td rowspan="2"><strong>LOGO (Artistic Swimming)</strong></td>
-          <td>Avg. SRCC ↑</td>
-          <td>0.780 (Inter-AQA)</td>
-          <td><strong>0.796</strong></td>
-          <td>+2.1%</td>
-        </tr>
-        <tr>
-          <td>Avg. R-ℓ2 ↓</td>
-          <td>1.745 (Inter-AQA)</td>
-          <td><strong>3.084</strong></td>
-          <td>Better ranking despite small abs. error rise</td>
-        </tr>
-
-      </tbody>
-    </table>
-
-    <div class="content is-small has-text-grey">
-      <p>
-        Data extracted from the IJCV 2025 manuscript, including Tables 2, 3, and 4
-        (RG, Fis-V, LOGO results).  
-      </p>
-    </div>
-
-  </div>
-</section>
-
-
+  </section>
 
   <!-- BibTeX citation -->
   <section class="section" id="BibTeX">
