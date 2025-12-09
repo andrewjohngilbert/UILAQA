@@ -7,31 +7,27 @@
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-
   gtag('config', 'G-81D6829LG0');
 </script>
 
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="UIL-AQA is a novel uncertainty-aware, interpretable long-term Action Quality Assessment framework published in the International Journal of Computer Vision (IJCV), 2025. The model introduces Gaussian noise injection for uncertainty modelling, an attention-guided mechanism to prevent temporal skipping, and a difficulty–quality regression head enabling clip-level interpretability.">
+  <meta name="description" content="UIL-AQA is a novel uncertainty-aware, interpretable long-term Action Quality Assessment framework published in the International Journal of Computer Vision (IJCV), 2025.">
   <meta property="og:title" content="UIL-AQA: Uncertainty-aware Clip-level Interpretable Action Quality Assessment"/>
-  <meta property="og:description" content="UIL-AQA introduces uncertainty-aware modelling and interpretable clip-level difficulty–quality scoring for long-term Action Quality Assessment. Published in IJCV 2025."/>
+  <meta property="og:description" content="UIL-AQA introduces uncertainty-aware modelling and interpretable clip-level difficulty-quality scoring for long-term Action Quality Assessment."/>
   <meta property="og:url" content="https://andrewjohngilbert.github.io/UILAQA/"/>
   <meta property="og:image" content="assets/UIL-AQA_Teaser.jpg" />
   <meta property="og:image:width" content="1200"/>
   <meta property="og:image:height" content="630"/>
-
   <meta name="twitter:title" content="UIL-AQA: Uncertainty-aware Clip-level Interpretable Action Quality Assessment">
-  <meta name="twitter:description" content="Published in IJCV 2025, UIL-AQA introduces uncertainty-aware modelling and interpretable difficulty–quality scoring for long-term AQA.">
+  <meta name="twitter:description" content="Published in IJCV 2025, UIL-AQA introduces uncertainty-aware modelling and interpretable difficulty-quality scoring.">
   <meta name="twitter:image" content="assets/UIL-AQA_Teaser.jpg">
   <meta name="twitter:card" content="summary_large_image">
-
-  <meta name="keywords" content="Action Quality Assessment, Uncertainty Modelling, Interpretability, Transformer, IJCV 2025, Andrew Gilbert">
+  <meta name="keywords" content="Action Quality Assessment, Uncertainty Modelling, Interpretability, Transformer, IJCV 2025">
 
   <title>UIL-AQA: Uncertainty-aware Clip-level Interpretable Action Quality Assessment</title>
   <link rel="icon" type="image/x-icon" href="static/images/favicon-32x32.png">
   <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
-
   <link rel="stylesheet" href="static/css/bulma.min.css">
   <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
   <link rel="stylesheet" href="static/css/bulma-slider.min.css">
@@ -54,21 +50,21 @@
         <div class="columns is-centered">
           <div class="column has-text-centered">
             <h1 class="title is-1 publication-title">UIL-AQA: Uncertainty-aware Clip-level Interpretable Action Quality Assessment</h1>
+            
             <div class="is-size-5 publication-authors">
-              <span class="author-block"><a href="https://www.linkedin.com/in/xudong-442302166/" target="_blank">Xu Dong</a>[1],</span>
-              <span class="author-block"><a href="https://www.surrey.ac.uk/people/xinran-liu" target="_blank">Xinran Liu</a>[1],</span>
-              <span class="author-block"><a href="https://scholars.uow.edu.au/wanqing-li" target="_blank">Wanqing Li</a>[2],</span>
-              <span class="author-block"><a href="https://www.surrey.ac.uk/people/anthony-adeyemi-ejeye" target="_blank">Anthony Adeyemi-Ejeye</a>[1],</span>
-              <span class="author-block"><a href="https://andrewjohngilbert.github.io/" target="_blank">Andrew Gilbert</a>[1]</span>
+              <span class="author-block"><a href="https://www.linkedin.com/in/xudong-442302166/" target="_blank">Xu Dong</a><sup>[1]</sup>,</span>
+              <span class="author-block"><a href="https://www.surrey.ac.uk/people/xinran-liu" target="_blank">Xinran Liu</a><sup>[1]</sup>,</span>
+              <span class="author-block"><a href="https://scholars.uow.edu.au/wanqing-li" target="_blank">Wanqing Li</a><sup>[2]</sup>,</span>
+              <span class="author-block"><a href="https://www.surrey.ac.uk/people/anthony-adeyemi-ejeye" target="_blank">Anthony Adeyemi-Ejeye</a><sup>[1]</sup>,</span>
+              <span class="author-block"><a href="https://andrewjohngilbert.github.io/" target="_blank">Andrew Gilbert</a><sup>[1]</sup></span>
             </div>
 
             <div class="is-size-5 publication-authors">
-              <span class="author-block">[1] University of Surrey &nbsp; [2] University of Wollongong<br>
+              <span class="author-block"><sup>[1]</sup> University of Surrey <span style="margin: 0 0.25em;"></span> <sup>[2]</sup> University of Wollongong<br>
               <em>International Journal of Computer Vision (IJCV), 2025</em></span>
             </div>
 
-            <div class="publication-links">
-              <!-- Paper PDF link -->
+            <div class="publication-links" style="margin-top: 1.5rem;">
               <span class="link-block">
                 <a href="assets/IJCV_editor_verison.pdf" target="_blank" class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
@@ -84,7 +80,6 @@
     </div>
   </section>
 
-  <!-- Paper abstract -->
   <section class="section hero is-light">
     <div class="container is-max-desktop">
       <div class="columns is-centered has-text-centered">
@@ -92,28 +87,25 @@
           <h2 class="title is-3">Abstract</h2>
           <div class="content has-text-justified">
             <p>
-              Action Quality Assessment (AQA) aims to score how well an action is performed in a video, but long-term sequences, subjective judging and a single global score make this problem challenging. Existing methods often focus on short clips, lack clip-level interpretability, and ignore uncertainty arising from human bias. In this work we propose UIL-AQA, a query-based Transformer framework designed to be both clip-level interpretable and uncertainty-aware for long-term AQA. The model introduces an Attention Loss and a Query Initialization module to mitigate a phenomenon we term <em>Temporal Skipping</em>, where self-attention layers are effectively bypassed, weakening temporal modelling. We further add a Gaussian Noise Injection module that simulates variability in human scoring, improving robustness to subjective and noisy labels. Finally, a Difficulty - Quality Regression Head decomposes each clip's contribution into separate difficulty and quality components, enabling fine-grained, human-aligned analysis of performances. Experiments on three long-term AQA benchmarks – Rhythmic Gymnastics (RG), Figure Skating Video (Fis-V), and LOng-form GrOup (LOGO) - show that UIL-AQA achieves state-of-the-art performance while providing more interpretable clip-wise scores.
+              Action Quality Assessment (AQA) aims to score how well an action is performed in a video, but long-term sequences, subjective judging and a single global score make this problem challenging. Existing methods often focus on short clips, lack clip-level interpretability, and ignore uncertainty arising from human bias. In this work we propose UIL-AQA, a query-based Transformer framework designed to be both clip-level interpretable and uncertainty-aware for long-term AQA. The model introduces an Attention Loss and a Query Initialization module to mitigate a phenomenon we term Temporal Skipping, where self-attention layers are effectively bypassed, weakening temporal modelling. We further add a Gaussian Noise Injection module that simulates variability in human scoring, improving robustness to subjective and noisy labels. Finally, a Difficulty-Quality Regression Head decomposes each clip's contribution into separate difficulty and quality components, enabling fine-grained, human-aligned analysis of performances. Experiments on three long-term AQA benchmarks - Rhythmic Gymnastics (RG), Figure Skating Video (Fis-V), and LOng-form GrOup (LOGO) - show that UIL-AQA achieves state-of-the-art performance while providing more interpretable clip-wise scores.
             </p>
           </div>
         </div>
       </div>
     </div>
   </section>
-  <!-- End paper abstract -->
 
-  <!-- System diagram -->
   <section class="hero teaser">
     <div class="container is-max-desktop">
       <div class="hero-body">
-        <h2 class="title is-3">Overview of the UIL-AQA architecture</h2>
+        <h2 class="title is-3">Overview of the UIL-AQA Architecture</h2>
         <img src="assets/UIL-AQA_System.jpg" alt="UIL-AQA System figure">
         <h2 class="subtitle has-text-centered">
-          The input video is divided into clips and passed through a frozen feature extractor (I3D or Video Swin Transformer). A DETR-style Transformer decoder with learnable queries models long-range temporal structure. Attention Loss and Query Initialization mitigate <strong>Temporal Skipping</strong> by encouraging strong inter-query correlations. The Difficulty–Quality Regression Head outputs clip-level difficulty weights and quality scores, while the Gaussian Noise Injection module models uncertainty in human judgement and improves robustness.
+          The input video is divided into clips and passed through a frozen feature extractor (I3D or Video Swin Transformer). A DETR-style Transformer decoder with learnable queries models long-range temporal structure. Attention Loss and Query Initialization mitigate Temporal Skipping by encouraging strong inter-query correlations. The Difficulty-Quality Regression Head outputs clip-level difficulty weights and quality scores, while the Gaussian Noise Injection module models uncertainty in human judgement and improves robustness.
         </h2>
       </div>
     </div>
   </section>
-  <!-- End system diagram -->
 
   <section class="section">
     <div class="container is-max-desktop">
@@ -121,10 +113,7 @@
 
       <div class="content has-text-justified">
         <p>
-          UIL-AQA achieves state-of-the-art performance across all three major long-term AQA datasets.
-          Improvements are most pronounced on the Rhythmic Gymnastics (RG) and LOGO benchmarks,
-          demonstrating the model's strength in handling long temporal dependencies, uncertainty,
-          and clip-level interpretability.
+          UIL-AQA achieves state-of-the-art performance across all three major long-term AQA datasets. Improvements are most pronounced on the Rhythmic Gymnastics (RG) and LOGO benchmarks, demonstrating the model's strength in handling long temporal dependencies, uncertainty, and clip-level interpretability.
         </p>
       </div>
 
@@ -141,75 +130,69 @@
           </tr>
         </thead>
         <tbody>
-          <!-- RG -->
           <tr>
             <td rowspan="2"><strong>Rhythmic Gymnastics (RG)</strong></td>
-            <td>Avg. SRCC ↑</td>
+            <td>Avg. SRCC</td>
             <td>0.842 (Inter-AQA)</td>
             <td><strong>0.858</strong></td>
             <td>+1.6%</td>
           </tr>
           <tr>
-            <td>Avg. MSE ↓</td>
+            <td>Avg. MSE</td>
             <td>7.61 (Inter-AQA)</td>
             <td><strong>5.65</strong></td>
-            <td>−25.7%</td>
+            <td>-25.7%</td>
           </tr>
 
-          <!-- Fis-V -->
           <tr>
             <td rowspan="2"><strong>Figure Skating (Fis-V)</strong></td>
-            <td>Avg. SRCC ↑</td>
+            <td>Avg. SRCC</td>
             <td>0.780 (Inter-AQA)</td>
             <td><strong>0.796</strong></td>
             <td>+1.6%</td>
           </tr>
           <tr>
-            <td>Avg. MSE ↓</td>
+            <td>Avg. MSE</td>
             <td>1.745 (Inter-AQA)</td>
             <td><strong>1.72</strong></td>
             <td>Comparable</td>
           </tr>
 
-          <!-- LOGO -->
           <tr>
             <td rowspan="2"><strong>LOGO (Artistic Swimming)</strong></td>
-            <td>Avg. SRCC ↑</td>
+            <td>Avg. SRCC</td>
             <td>0.780 (Inter-AQA)</td>
             <td><strong>0.796</strong></td>
             <td>+2.1%</td>
           </tr>
           <tr>
-            <td>Avg. R-ℓ2 ↓</td>
+            <td>Avg. R-l2</td>
             <td>1.745 (Inter-AQA)</td>
             <td><strong>3.084</strong></td>
-            <td>Better ranking despite small abs. error rise</td>
+            <td>Better ranking</td>
           </tr>
         </tbody>
       </table>
 
       <div class="content is-small has-text-grey">
         <p>
-          Data extracted from the IJCV 2025 manuscript, including Tables 2, 3, and 4
-          (RG, Fis-V, LOGO results).  
+          Data extracted from the IJCV 2025 manuscript, including Tables 2, 3, and 4 (RG, Fis-V, LOGO results).
         </p>
       </div>
     </div>
   </section>
 
-  <!-- BibTeX citation -->
   <section class="section" id="BibTeX">
     <div class="container is-max-desktop content">
       <h2 class="title">BibTeX</h2>
       <pre><code>@article{Dong2025UILAQA,
-  author    = {Xu Dong and Xinran Liu and Wanqing Li and Anthony Adeyemi{-}Ejeye and Andrew Gilbert},
+  author    = {Xu Dong and Xinran Liu and Wanqing Li and Anthony Adeyemi-Ejeye and Andrew Gilbert},
   title     = {UIL-AQA: Uncertainty-aware Clip-level Interpretable Action Quality Assessment},
   journal   = {International Journal of Computer Vision},
   year      = {2025},
 }</code></pre>
     </div>
   </section>
-  <!-- End BibTeX citation -->
 
   <footer class="footer">
     <div class="container">
@@ -217,8 +200,7 @@
         <div class="column is-8">
           <div class="content">
             <p>
-              This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a> which was adopted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
-              You are free to borrow the of this website, we just ask that you link back to this page in the footer. <br> This website is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+              This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a> which was adopted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page. You are free to borrow the of this website, we just ask that you link back to this page in the footer. <br> This website is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
             </p>
           </div>
         </div>
