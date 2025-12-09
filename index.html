@@ -11,51 +11,22 @@
   gtag('config', 'G-81D6829LG0');
 </script>
 
-<script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "ScholarlyArticle",
-    "name": "Multitwine: Multi-Object Compositing with Text and Layout Control",
-    "author": [
-      { "@type": "Person", "name": "Gemma C Tarrés" },
-      { "@type": "Person", "name": "Zhe Lin" },
-      { "@type": "Person", "name": "Zhifei Zhang" },
-      { "@type": "Person", "name": "He Zhang" },
-      { "@type": "Person", "name": "Andrew Gilbert" },
-      { "@type": "Person", "name": "John Collomosse" },
-      { "@type": "Person", "name": "Soo Ye Kim" }
-    ],
-    "publisher": "The IEEE/CVF Conference on Computer Vision and Pattern Recognition",
-    "datePublished": "2025-05-15",
-    "url": "https://andrewjohngilbert.github.io/multitwine/"
-  }
-  </script>
+  <meta name="description" content="UIL-AQA is a novel uncertainty-aware, interpretable long-term Action Quality Assessment framework published in the International Journal of Computer Vision (IJCV), 2025. The model introduces Gaussian noise injection for uncertainty modelling, an attention-guided mechanism to prevent temporal skipping, and a difficulty–quality regression head enabling clip-level interpretability.">
+<meta property="og:title" content="UIL-AQA: Uncertainty-aware Clip-level Interpretable Action Quality Assessment"/>
+<meta property="og:description" content="UIL-AQA introduces uncertainty-aware modelling and interpretable clip-level difficulty–quality scoring for long-term Action Quality Assessment. Published in IJCV 2025."/>
+<meta property="og:url" content="https://andrewjohngilbert.github.io/UILAQA/"/>
+<meta property="og:image" content="assets/UIL-AQA_Teaser.jpg" />
 
-  <meta charset="utf-8">
-  <!-- Meta tags for social media banners, these should be filled in appropriatly as they are your "business card" -->
-  <!-- Replace the content tag with appropriate information -->
-  <meta name="description" content="Multitwine is the first generative model for simultaneous multi-object compositing, guided by text and layout. It enables complex interactions and autonomous prop generation for realistic scenes."/>
-  <meta property="og:title" content="Multitwine: Multi-Object Compositing with Text and Layout Control"/>
-  <meta property="og:description" content="Multitwine is the first generative model for simultaneous multi-object compositing, guided by text and layout. It enables complex interactions and autonomous prop generation for realistic scenes."/>
-  <meta property="og:url" content="https://andrewjohngilbert.github.io/multitwine/"/>
-  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X630-->
-  <meta property="og:image" content="assets/multitwine_teaser.jpg" />
-  <meta property="og:image:width" content="1200"/>
-  <meta property="og:image:height" content="630"/>
+<meta name="twitter:title" content="UIL-AQA: Uncertainty-aware Clip-level Interpretable Action Quality Assessment">
+<meta name="twitter:description" content="Published in IJCV 2025, UIL-AQA introduces uncertainty-aware modelling and interpretable difficulty–quality scoring for long-term AQA.">
+<meta name="twitter:image" content="assets/UIL-AQA_Teaser.jpg">
+<meta name="twitter:card" content="summary_large_image">
+
+<meta name="keywords" content="Action Quality Assessment, Uncertainty Modelling, Interpretability, Transformer, IJCV 2025, Andrew Gilbert">
 
 
-  <meta name="twitter:title" content="Multitwine: Multi-Object Compositing with Text and Layout Control">
-  <meta name="twitter:description" content="Multitwine is the first generative model for simultaneous multi-object compositing, guided by text and layout. It enables complex interactions and autonomous prop generation for realistic scenes.">
-  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X600-->
-  <meta name="twitter:image" content="asserts/multitwine_teaser.jpg">
-  <meta name="twitter:card" content="summary_large_image">
-  <!-- Keywords for your paper to be indexed by-->
-  <meta name="keywords" content="Machine Learning, John Collomosse, Andrew Gilbert, Computer Vision, Image Processing, Generative Models, Image Synthesis, Image Generation, Text to Image Generation, Multi-Object Compositing, Layout Control, 3D Understanding, Action Recognition, Depth Maps, RGB Features, Video Analysis">
-  <meta name="author" content="Gemma C Tarrés, Zhe Lin, Zhifei Zhang, H Zhang, Andrew Gilbert, John Collomosse, Soo Ye Kim">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-
-  <title>Multitwine: Multi-Object Compositing with Text and Layout Control</title>
+  <title>UIL-AQA: Uncertainty-aware Clip-level Interpretable Action Quality Assessment</title>
   <link rel="icon" type="image/x-icon" href="static/images/favicon-32x32.png">
   <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
   rel="stylesheet">
@@ -83,36 +54,27 @@
       <div class="container is-max-desktop">
         <div class="columns is-centered">
           <div class="column has-text-centered">
-            <h1 class="title is-1 publication-title">Multitwine: Multi-Object Compositing with Text and Layout Control</h1>
+            <h1 class="title is-1 publication-title">
+  UIL-AQA: Uncertainty-aware Clip-level Interpretable Action Quality Assessment
+</h1>
             <div class="is-size-5 publication-authors">
-              <!-- Paper authors -->
-              <span class="author-block">
-                <a href="https://www.linkedin.com/in/gemmacanettarres" target="_blank">Gemma C Tarrés</a><sup>[1]</sup>,</span>
-                <span class="author-block">
-                  <a href="https://research.adobe.com/person/zhe-lin/" target="_blank">Zhe Lin</a><sup>[2]</sup>,</span>
-                  <span class="author-block">
-                    <a href="https://research.adobe.com/person/zhifei-zhang/" target="_blank">Zhifei Zhang</a><sup>[2]</sup>,</span>                    
-                    <span class="author-block">
-                      <a href=https://sites.google.com/site/hezhangsprinter/" target="_blank">He Zhang</a><sup>[2]</sup>,</span>                                          
-                <span class="author-block">
-                  <a href="https://andrewjohngilbert.github.io/" target="_blank">Andrew Gilbert</a><sup>[1]</sup>,</span>
-                <span class="author-block">
-                  <a href="http://personal.ee.surrey.ac.uk/Personal/J.Collomosse/" target="_blank">John Collomosse</a><sup>[1,2]</sup> </span>
-                <span class="author-block">
-                  <a href="https://sites.google.com/view/sooyekim" target="_blank">Soo Ye Kim</a>[2]
-                </span>                  
-                </div>
+  <span class="author-block"><a href="https://www.linkedin.com/in/xudong-442302166/" target="_blank">Xu Dong</a>[1],</span>
+  <span class="author-block"><a href="https://www.surrey.ac.uk/people/xinran-liu" target="_blank">Xinran Liu</a>[1],</span>
+  <span class="author-block"><a href="https://scholars.uow.edu.au/wanqing-li" target="_blank">Wanqing Li</a>[2],</span>
+  <span class="author-block"><a href="https://www.surrey.ac.uk/people/anthony-adeyemi-ejeye" target="_blank">Anthony Adeyemi-Ejeye</a>[1],</span>
+  <span class="author-block"><a href="https://andrewjohngilbert.github.io/" target="_blank">Andrew Gilbert</a>[1]</span>
+</div>
 
-                <div class="is-size-5 publication-authors">
-                  <span class="author-block">University of Surrey<sup>[1]</sup>, Adobe Resarch<sup>[2]</sup><br><a href="https://cvpr.thecvf.com/Conferences/2025" target="_blank">The IEEE/CVF Conference on Computer Vision and Pattern Recognition 2025</a></span>
-              
-                </div>
+<div class="is-size-5 publication-authors">
+  <span class="author-block">[1] University of Surrey &nbsp; [2] University of Wollongong<br>
+  <em>International Journal of Computer Vision (IJCV), 2025</em>
+</div>
 
                   <div class="column has-text-centered">
                     <div class="publication-links">
-                         <!-- Paper PDF link -->
+                         <!-- Arxiv PDF link -->
                       <span class="link-block">
-                        <a href="https://andrewjohngilbert.github.io/multitwine/assets/Mutitwine_Paper.pdf" target="_blank"
+                        <a href="assets/IJCV_editor_verison.pdf" target="_blank"
                         class="external-link button is-normal is-rounded is-dark">
                         <span class="icon">
                           <i class="fas fa-file-pdf"></i>
@@ -121,30 +83,20 @@
                       </a>
                     </span>
 
-                       <!-- Arxiv PDF link -->
-                       <span class="link-block">
-                        <a href="https://arxiv.org/abs/2502.05165" target="_blank"
-                        class="external-link button is-normal is-rounded is-dark">
-                        <span class="icon">
-                          <i class="fas fa-file-pdf"></i>
-                        </span>
-                        <span>Arxiv</span>
-                      </a>
+ 
+                  <!-- Github link -->
+                   <!--
+                <span class="link-block">
+                    <a href="https://github.com/SadeghRahmaniB/DEAR" target="_blank"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fab fa-github"></i>
                     </span>
+                    <span>Code</span>
+                  </a>
+                </span>
 
-                    <!-- Poster PDF link -->
-                     
-                   <span class="link-block">
-                      <a href="assets/MutitwinePoster.pdf" target="_blank"
-                      class="external-link button is-normal is-rounded is-dark">
-                      <span class="icon">
-                        <i class="fas fa-file-pdf"></i>
-                      </span>
-                      <span>Poster</span>
-                    </a>
-                  </span>
-                  
-
+              -->
               
 
                 
@@ -157,18 +109,18 @@
 </section>
 
 
-<!-- Teaser video-->
+<!-- Teaser hero-->
 <section class="hero teaser">
   <div class="container is-max-desktop">
     <div class="hero-body">
-      <img src="assets/mutitwine_teaser.jpg" alt="Multitwine teaser showcasing multi-object compositing">
+      <img src="assets/UIL-AQA_Teaser.jpg" alt="UIL-AQA teaser figure">
       <h2 class="subtitle has-text-centered">
-        Multitwine leverages RGB and depth map frames for supervised action recognition. Using the S4V network and VideoMamba, it extracts depth features and fuses modalities with Gated Cross-Attention (GCA), achieving robust multi-object compositing.
+        UIL-AQA is a long-term Action Quality Assessment framework that regresses clip-level difficulty and quality while explicitly modelling judge uncertainty. A query-based Transformer decoder, an attention loss to prevent temporal skipping, and a Gaussian noise injection module together yield interpretable clip-wise scores and robust predictions across rhythmic gymnastics, figure skating, and group performance datasets.
       </h2>
     </div>
   </div>
 </section>
-<!-- End teaser video -->
+<!-- End teaser hero -->
 
 <!-- Paper abstract -->
 <section class="section hero is-light">
@@ -178,9 +130,7 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-        
-              Multitwine introduces a generative model for simultaneous multi-object compositing, guided by text and layout. It supports adding multiple objects to a scene, capturing interactions from simple positional relations (e.g., "next to") to complex actions (e.g., "hugging"). The model autonomously generates supporting props when needed (e.g., for "taking a selfie"). By jointly training for compositing and customization, Multitwine achieves state-of-the-art performance in both tasks, offering a versatile solution for text-driven object compositing.
-            
+            Action Quality Assessment (AQA) aims to score how well an action is performed in a video, but long-term sequences, subjective judging and a single global score make this problem challenging. Existing methods often focus on short clips, lack clip-level interpretability, and ignore uncertainty arising from human bias. In this work we propose UIL-AQA, a query-based Transformer framework designed to be both clip-level interpretable and uncertainty-aware for long-term AQA. The model introduces an Attention Loss and a Query Initialization module to mitigate a phenomenon we term <em>Temporal Skipping</em>, where self-attention layers are effectively bypassed, weakening temporal modelling. We further add a Gaussian Noise Injection module that simulates variability in human scoring, improving robustness to subjective and noisy labels. Finally, a Difficulty–Quality Regression Head decomposes each clip’s contribution into separate difficulty and quality components, enabling fine-grained, human-aligned analysis of performances. Experiments on three long-term AQA benchmarks – Rhythmic Gymnastics (RG), Figure Skating Video (Fis-V), and LOng-form GrOup (LOGO) – show that UIL-AQA achieves state-of-the-art performance while providing more interpretable clip-wise scores.
           </p>
         </div>
       </div>
@@ -189,100 +139,91 @@
 </section>
 <!-- End paper abstract -->
 
-<!-- Model overview-->
+
+
+<!-- System diagram-->
 <section class="hero teaser">
   <div class="container is-max-desktop">
     <div class="hero-body">
-      <h2 class="title is-3">Model Architecture</h2>
-      <img src="assets/MultitwineModel.png">
-      <h2 class="subtitle has-text-centered">
-        <p>
-          Our model integrates a Stable Diffusion backbone with a U-Net, autoencoder, text encoder, image encoder, and an adaptor. It combines text and image embeddings to create a multimodal representation, enabling seamless multi-object compositing with layout and background harmonization.
-</p>
+      <h2 class="title is-3">Overview of the UIL-AQA architecture</h2>
+      <img src="assets/UIL-AQA_System.jpg" alt="UIL-AQA System figure">
+            <h2 class="subtitle has-text-centered">
+        The input video is divided into clips and passed through a frozen feature extractor (I3D or Video Swin Transformer). A DETR-style Transformer decoder with learnable queries models long-range temporal structure. Attention Loss and Query Initialization mitigate <strong>Temporal Skipping</strong> by encouraging strong inter-query correlations. The Difficulty–Quality Regression Head outputs clip-level difficulty weights and quality scores, while the Gaussian Noise Injection module models uncertainty in human judgement and improves robustness.
+            </em>
       </h2>
     </div>
   </div>
 </section>
-<!-- End Model overview -->
+<!-- System diagram -->
 
-<!-- Results 1-->
-<section class="hero teaser">
+<section class="section">
   <div class="container is-max-desktop">
-    <div class="hero-body">
-      <h2 class="title is-3">Comparison to Generative Object Compositing Models</h2>
-      <img src="assets/Multitwinebaselinescomp.jpg">
-      <h2 class="subtitle has-text-centered">
-        <p>Multitwine outperforms recent generative object compositing models by enabling simultaneous multi-object compositing. This approach ensures cohesive harmonization, captures complex interactions (e.g., reposing), and autonomously adds elements for realism.</p>
-      </h2>
-    </div>
-  </div>
-</section>
-<!-- End Results 1 -->
-
-<!-- Results 2-->
-<section class="hero teaser">
-  <div class="container is-max-desktop">
-    <div class="hero-body">
-      <h2 class="title is-3">Comparison to Customization Models</h2>
-      <img src="assets/MultitwineResults2.jpg">
-      <h2 class="subtitle has-text-centered">
-        <p>Our primary task is Object Compositing, but we also train for Subject-Driven Generation as an auxiliary
-          task for achieving a better balance between text and image alignment in the compositing task. As a side
-          effect, our model is also able to perform Multi-Entity Subject-Driven Generation, achieving comparable
-          performance to state-of-the-art customization models. </p>
-      </h2>
-    </div>
-  </div>
-</section>
-<!-- End Results 2 -->
-
-<!-- Applications-->
-<section class="hero teaser">
-  <div class="container is-max-desktop">
-    <div class="hero-body">
-      <h2 class="title is-3">Applications</h2>
-      <img src="assets/MultitwineApplications.jpg">
-      <h2 class="subtitle has-text-centered">
-        <p>Multitwine demonstrates emerging capabilities, including:
-          <b>Multi-Object Generation:</b> Compositing multiple objects simultaneously with cohesive interactions.
-          <b>Subject-Driven Inpainting:</b> Seamlessly completing scenes by generating and integrating additional objects guided by text and layout.</p>
-      </h2>
-    </div>
-  </div>
-</section>
-<!-- End Applications -->
+    <div class="columns is-centered">
+      <div class="column is-four-fifths">
 
 
+        <div class="content has-text-justified">
 
+          <p>
+            UIL-AQA is designed to provide <strong>interpretable</strong> and <strong>uncertainty-aware</strong> scoring for long-term Action Quality Assessment (AQA). Unlike prior methods that produce a single global score, UIL-AQA predicts <em>per-clip difficulty and quality</em>, while also modelling the uncertainty in human judgement. The framework consists of four key components:
+          </p>
 
+          <h3 class="title is-5">1. Feature Extraction</h3>
+          <p>
+            The input video is divided into fixed-length clips. Each clip is processed using a pretrained backbone (I3D or Video Swin Transformer) to extract spatiotemporal features. These features are frozen during training to ensure stability and efficiency.
+          </p>
 
-<!-- Paper poster -->
+          <h3 class="title is-5">2. Temporal Decoder with Learnable Queries</h3>
+          <p>
+            UIL-AQA uses a <strong>DETR-style Transformer decoder</strong> equipped with learnable queries. Each query corresponds to a video clip and interacts with clip features through self-attention and cross-attention layers to capture long-range temporal structure. To prevent loss of temporal information, we introduce two innovations:
+          </p>
+          <ul>
+            <li><strong>Attention Loss</strong> – Encourages alignment between self-attention and cross-attention maps, mitigating a failure mode we call <em>Temporal Skipping</em>.</li>
+            <li><strong>Query Initialization</strong> – High-variance Gaussian initialisation promotes diverse temporal representations, strengthening inter-query relationships.</li>
+          </ul>
 
-  <section class="hero is-small is-light">
-  <div class="hero-body">
-    <div class="container">
-      <h2 class="title">Poster</h2>
+          <h3 class="title is-5">3. Difficulty–Quality Regression Head</h3>
+          <p>
+            Instead of predicting only a single score, UIL-AQA regresses:
+          </p>
+          <ul>
+            <li><strong>Difficulty</strong> – A softmax-normalised weight representing the relative contribution of each clip.</li>
+            <li><strong>Quality</strong> – A clip-level quality score predicted independently for each segment.</li>
+          </ul>
+          <p>
+            The final video score is obtained via a weighted sum of clip quality scores. This mirrors human judging processes in sports such as rhythmic gymnastics and figure skating, enabling <strong>fine-grained interpretability</strong>.
+          </p>
 
-      <iframe  src="assets/MutitwinePoster.pdf" width="100%" height="1000">
-          </iframe>
-        
+          <h3 class="title is-5">4. Gaussian Noise Injection for Uncertainty Modelling</h3>
+          <p>
+            Human scoring often includes subjective variation. UIL-AQA introduces a <strong>Gaussian Noise Injection module</strong> during training to simulate this variability by perturbing predicted scores. This encourages the model to learn uncertainty-aware representations, improving robustness against noisy labels and inconsistent judge behaviour.
+          </p>
+
+          <h3 class="title is-5">Summary</h3>
+          <p>
+            Together, these components allow UIL-AQA to achieve <strong>state-of-the-art performance</strong> on three challenging long-form AQA benchmarks (RG, Fis-V, LOGO), while providing the rare ability to both <strong>explain its scoring</strong> and <strong>model uncertainty</strong> — two critical requirements for real-world deployment.
+          </p>
+
+        </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-<!--End paper poster -->
+
 
 
 <!--BibTex citation -->
   <section class="section" id="BibTeX">
     <div class="container is-max-desktop content">
       <h2 class="title">BibTeX</h2>
-      <pre><code>@inproceedings{Tarrés:Multitwine:CVPR:2025,
-        AUTHOR =  "Tarrés, Gemma C and Lin, Zhe and Zhang, Zhifei and Zhang, He and Gilbert, Andrew and  Collomosse, John and Kim, Soo Ye",
-        TITLE = "Multitwine: Multi-Object Compositing with Text and Layout Control",
-        BOOKTITLE = "The IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR'25)",
-        YEAR = "2025",
-        }</code></pre>
+      <pre><code>@article{Dong2025UILAQA,
+  author    = {Xu Dong and Xinran Liu and Wanqing Li and Anthony Adeyemi{-}Ejeye and Andrew Gilbert},
+  title     = {UIL-AQA: Uncertainty-aware Clip-level Interpretable Action Quality Assessment},
+  journal   = {International Journal of Computer Vision},
+  year      = {2025},
+}
+</code></pre>
     </div>
 </section>
 <!--End BibTex citation -->
@@ -295,12 +236,9 @@
         <div class="content">
 
           <p>
-            <strong>Multitwine: Multi-Object Compositing with Text and Layout Control</strong> by  <a href="https://www.linkedin.com/in/gemmacanettarres" target="_blank">Gemma C Tarrés</a>, <a href="https://andrewjohngilbert.github.io/" target="_blank">Andrew Gilbert</a>, <a href="https://research.adobe.com/person/zhe-lin/" target="_blank">Zhe Lin</a>, <a href="https://research.adobe.com/person/zhifei-zhang/" target="_blank">Zhifei Zhang</a>, <a href="https://sites.google.com/site/hezhangsprinter/" target="_blank">He Zhang</a>, <a href="http://personal.ee.surrey.ac.uk/Personal/J.Collomosse/" target="_blank">John Collomosse</a>, and <a href="https://sites.google.com/view/sooyekim" target="_blank">Soo Ye Kim</a>.
-            <br>
-            <br>
-            <br>
-            This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a>, adapted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page. Feel free to reuse this template, but please include a link back to this page. <br> Licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
-
+            This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a> which was adopted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
+            You are free to borrow the of this website, we just ask that you link back to this page in the footer. <br> This website is licensed under a <a rel="license"  href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
           </p>
 
         </div>
